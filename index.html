@@ -3,7 +3,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>HistogRand: Generador de números aleatorios mediante un histograma (creado por JNM) v0.1</title>
+<title>HistogRand: Random number generator using a histogram (created by JNM) v0.1</title>
 
 <script type="text/javascript" charset="utf-8" src="paper-full.js"></script>
 <script type="text/javascript" charset="utf-8" src="jquery-1.11.1.min.js"></script>
@@ -17,18 +17,18 @@
 var globalVar = [];
 $(document).ready(function() {
 	
-	console.log("Iniciando");
+	console.log("Starting");
 		
 	$("#btnGenerate").click( function(){
 		
-		// Hacemos limpieza y comprobamos que todo está bien
+		// We clean and check that everything is OK.
 		var minVal = $("#minValue").val();
 		var maxVal = $("#maxValue").val();
 		var rndVar = $("#rndSlider").val();
 		var numPoints = $("#numPoints").val();
 		
 		if (isNaN(minVal) || isNaN(maxVal) || minVal == '' || maxVal == ''){
-			alert('Introduzca números válidos para los valores máximo y mínimo');
+			alert('Enter valid numbers for the maximum and minimum values');
 		}
 		
 		minVal = Number(minVal);
@@ -36,13 +36,13 @@ $(document).ready(function() {
 		rndVar = Number(rndVar)/100;
 		numPoints = Number(numPoints);
 		
-		console.log('Pesos elegidos: ' + globalVar);
-		console.log('Intervalo: [' + minVal + ',' + maxVal + ']');
-		console.log('Aleatoriedad: ' + rndVar);
-		console.log('Número de puntos: ' + numPoints);
-		console.log('Lanzando generador aleatorio...');
+		console.log('Weights selected: ' + globalVar);
+		console.log('Interval: [' + minVal + ',' + maxVal + ']');
+		console.log('Randomness: ' + rndVar);
+		console.log('Number of points: ' + numPoints);
+		console.log('Launching random generator...');
 		
-		// Creamos un array de probabilidades acumuladas
+		// We create an array of cumulative probabilities
 		var probMax = 0;
 		var prob = [];
 		for (var j = 0; j < 19; j++){
@@ -50,7 +50,7 @@ $(document).ready(function() {
 			prob.push(probMax);
 		}
 		
-		// Definimos los intervalos de valores en función del máximo y el mínimo.
+		// We define the intervals of values in terms of maximum and minimum.
 		var intervalMax = [];
 		var intervalStep = (maxVal - minVal)/19;
 		var intervalMin = minVal;
@@ -59,7 +59,7 @@ $(document).ready(function() {
 			intervalMin = intervalMax[i];
 		}
 		
-		// Elegimos valores aleatorios en cada intervalo en función de la probabilidad.
+		// We choose random values in each interval based on the probability.
 		var myList = [];
 		for ( var n = 0 ; n < numPoints ; n++ ) {
 			var myRandom = aleajn.random(0,probMax);
@@ -264,7 +264,7 @@ $(document).ready(function() {
 <body>
 	<header>
 		<h1>histog<span style="color: #f20;">rand</span> </h1>
-		<p>generador de juegos de datos</p>
+		<p>data set generator</p>
 		<br>
 	</header>
 	
@@ -289,29 +289,29 @@ $(document).ready(function() {
 		</div>
 		<div style="clear: both;" >
 			<div style="float: left;">
-				<p style="text-align: center; position: relative;">valor min</p>
+				<p style="text-align: center; position: relative;">min value</p>
 			</div>
 			<div style="float: right;">
-				<p style="text-align: center; position: relative;">valor max</p>
+				<p style="text-align: center; position: relative;">max value</p>
 			</div>
 		</div>
 		<div style="clear: both;" >
 			<span>&nbsp;&nbsp;0</span><input type="range" id="rndSlider" min=0 max =100 step=10 value=20 ></input><span>100</span>
-			<p style="text-align: center; position: relative;">aleatoriedad</p>
+			<p style="text-align: center; position: relative;">randomness</p>
 		</div>
 		<div style="clear: both; margin-top: 24px;" >
 			<input id="numPoints" type="text" value=10000>
-			<p style="text-align: center; position: relative;">número de puntos a generar</p>
+			<p style="text-align: center; position: relative;">number of points to be generated</p>
 			<br>
 		</div>
 		<div style="clear: both;">
-			<input type="button" class="myButton" id="btnGenerate" value="Generar"></input>
+			<input type="button" class="myButton" id="btnGenerate" value="Generate"></input>
 		</div>
 		<div style="clear: both;">
-			<a href=".\README.txt" target="_blank"><img src=".\img\ayuda.png" style="border: none; margin: 12px;" class="tooltip" id="btnHelp"></img></a>
+			<a href="https://github.com/hhkaos/histogrand/" target="_blank"><img src=".\img\ayuda.png" style="border: none; margin: 12px;" class="tooltip" id="btnHelp"></img></a>
 		</div>
 		<div style="clear: both; margin-top: 48px;" class="footer">
-			<a href="http://www.jaimenieves.es" target="_blank" style="text-decoration: none;">Creado por Jaime Nieves</a>
+			<a href="http://www.jaimenieves.es" target="_blank" style="text-decoration: none;">Created by Jaime Nieves</a>
 		</div>
   </div>
 	</div>
