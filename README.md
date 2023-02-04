@@ -1,20 +1,17 @@
 # histogrand
-Generador de valores aleatorios según histogramas personalizados
-creado por Jaime Nieves (www.jaimenieves.es)
+Random value generator according to customized histograms
+created by Jaime Nieves (www.jaimenieves.es)
 
 v1.0
 
-histogrand permite generar juegos de datos aleatorios a partir de una distribución de probabilidades fácilmente configurable por el usuario.
+Histogrand allows to generate random data sets from a probability distribution easily configurable by the user.
 
-La aplicación generará un CSV con un conjunto de valores que estarán siempre entre el máximo y el mínimo definidos por el usuario. 
+The application will generate a CSV with a set of values that will always be between the maximum and minimum values defined by the user. 
 
-La distribución estadística del conjunto se ajustará al patrón de 19 pesos indicados por las barras verticales. Las barras pueden modificarse simplemente pulsando sobre ellas, o pueden usarse los botones de la parte superior para cargar algunas distribuciones estándar o cambiarlas al azar.
+The statistical distribution of the set will fit the pattern of 19 weights indicated by the vertical bars. The bars can be modified by simply clicking on them, or the buttons at the top can be used to load some standard distributions or change them randomly.
 
-Cada barra representa un peso estadístico relativo; una barra dos veces más alta que otra generará dos veces más valores en su correspondiente intervalo.
+Each bar represents a relative statistical weight; a bar twice as high as another will generate twice as many values in its corresponding interval.
 
-El factor de aleatoriedad añade una variación aleatoria adicional a los datos generados. El valor por defecto es 20, lo que expresa que los valores generados pueden ser hasta un 20% más altos o más bajos que lo que corresponde a su intervalo.
+The randomness factor adds an additional random variation to the generated data. The default value is 20, which means that the generated values can be up to 20% higher or lower than what corresponds to their range.
 
-Roadmap:
- - Obtener una curva suavizada a partir del histograma para obtener valores de forma continua.
- - Generador de datos categorizados siguiendo pesos aleatorios (en vez de numéricos).
- - Generador de puntos con coordenadas geográficas según una distribución espacial aleatoria en un extent definido.
+[Roadmap](https://github.com/JaimeNieves/histogrand).
